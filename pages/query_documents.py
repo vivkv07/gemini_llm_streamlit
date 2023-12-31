@@ -35,24 +35,6 @@ def to_markdown(text):
     text = text.replace('•', '  *')
     return textwrap.indent(text, '> ', predicate=lambda _: True)
 
-def process_image(text_for_llm, image_url):
-    llm_vision = ChatGoogleGenerativeAI(model="gemini-pro-vision")
-    message = HumanMessage(content=[{"type": "text", "text": text_for_llm}, {"type": "image_url", "image_url": image_url}])
-    return llm_vision.invoke([message])
-
-def generate_content_based_on_image(user_input, image_bytes):
-    model = genai.GenerativeModel('gemini-pro-vision')
-    response = model.generate_content(
-        glm.Content(
-            parts=[
-                glm.Part(text=user_input),
-                glm.Part(inline_data=glm.Blob(mime_type='image/jpeg', data=image_bytes)),
-            ],
-        ),
-        stream=True
-    )
-    return response
-
 # for m in genai.list_models():
 #   if 'embedContent' in m.supported_generation_methods:
 #     print(m.name)
@@ -113,6 +95,18 @@ def make_prompt(query, relevant_passage):
 
   return prompt
 
+if 'doc_query_history' not in st.session_state:
+    st.session_state.chat_history = []
+
+def update_chat_history(query, response):
+    # Append the query and response to the chat history
+    st.session_state.chat_history.append(("User", query))
+    st.session_state.chat_history.append(("System", response))
+    
+def display_chat():
+    # Display the chat history
+    for speaker, message in st.session_state.chat_history:
+        st.text_area(f"{speaker}:", value=message, height=80, disabled=True)
 
 def display():
     st.title("Work with your Documents")

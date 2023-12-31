@@ -25,6 +25,7 @@ genai.configure(api_key=os.environ.get("GOOGLE_API_KEY"))
 
 def display():
     st.title("Ask Me Anything 🤖")
+    st.caption("Using Gemini AI")
 
     # Initialize session state for storing chat history if not present
     if "chat_history" not in st.session_state:
