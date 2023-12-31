@@ -23,7 +23,6 @@ from chromadb.config import Settings
 st.set_page_config(
     page_title="Document Search",
     page_icon="🧊",
-    layout="wide",
     initial_sidebar_state="expanded"
 )
 # Load environment variables and configure API
@@ -180,19 +179,25 @@ def display():
             with col3: st.caption("What is MLOps?")
         
         if st.button("Search"):
+            with st.status("Reading Through the Docs"):
             # Perform a query and display the relevant passage
-            selected_collection = [collection for collection in collections if collection.name == selected_db][0]
-            db = chroma_client.get_or_create_collection(name=selected_db, embedding_function=GeminiEmbeddingFunction())
-            relevant_passage = get_relevant_passage(query, db)
+                selected_collection = [collection for collection in collections if collection.name == selected_db][0]
+                db = chroma_client.get_or_create_collection(name=selected_db, embedding_function=GeminiEmbeddingFunction())
+                relevant_passage = get_relevant_passage(query, db)
 
             # st.write("Relevant Passage:")
             # st.write(relevant_passage)
             
-            prompt = make_prompt(query, relevant_passage)
+                prompt = make_prompt(query, relevant_passage)
             # st.write(prompt)
 
-            model = genai.GenerativeModel('gemini-pro')
-            response = model.generate_content(prompt)
+                model = genai.GenerativeModel('gemini-pro')
+                response = model.generate_content(prompt)
             st.markdown(response.text)
 
-display()
+
+# display()
+st.title("Coming Soon!")
+st.caption("Progress: Working on the fix for sqlite3 as a dependency for chromadb")
+st.markdown("![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)")
+

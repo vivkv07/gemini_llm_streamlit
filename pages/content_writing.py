@@ -12,7 +12,6 @@ import google.generativeai as genai
 st.set_page_config(
     page_title="Write Articles",
     page_icon="🧊",
-    layout="wide",
     initial_sidebar_state="expanded"
 )
 
