@@ -102,7 +102,7 @@ def update_chat_history(query, response):
     # Append the query and response to the chat history
     st.session_state.chat_history.append(("User", query))
     st.session_state.chat_history.append(("System", response))
-    
+
 def display_chat():
     # Display the chat history
     for speaker, message in st.session_state.chat_history:
@@ -171,6 +171,13 @@ def display():
 
         # Allow users to input a query
         query = st.text_input("Enter your query:")
+        if selected_db == "sample":
+            col1, col2, col3, col4 = st.columns(4)
+            with col1: st.caption("Hint:")
+            with col2: st.caption("What is Data Engineering?")
+            with col3: st.caption("What is MLOps?")
+            with col4: st.caption("Something related to ML")
+        
         if st.button("Search"):
             # Perform a query and display the relevant passage
             selected_collection = [collection for collection in collections if collection.name == selected_db][0]
