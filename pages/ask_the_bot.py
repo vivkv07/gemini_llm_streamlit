@@ -21,7 +21,8 @@ st.set_page_config(
     }
 )
 load_dotenv()
-genai.configure(api_key=os.environ.get("GOOGLE_API_KEY"))
+
+genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
 def display():
     st.title("Ask Me Anything 🤖")
