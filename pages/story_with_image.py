@@ -69,8 +69,8 @@ def display():
             result = process_image("Create a short story based on the image", image_url)
             st.markdown(to_markdown(result.content), unsafe_allow_html=True)
 
-        if col3.button('Write about image'):
-            result = process_image("Create a short story based on the image", image_url)
+        if col3.button('Write a Blog'):
+            result = process_image("Write a Creative Blog about the Image", image_url)
             st.markdown(to_markdown(result.content), unsafe_allow_html=True)
 
 display()
