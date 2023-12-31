@@ -168,15 +168,16 @@ def display():
         
         # st.write(collections)
         selected_db = st.selectbox("Select an existing vector search database:", [collection.name for collection in collections])
+        if selected_db == "sample":
+            st.caption("Sample embeddings are created based of a MLOps Document")
 
         # Allow users to input a query
         query = st.text_input("Enter your query:")
         if selected_db == "sample":
-            col1, col2, col3, col4 = st.columns(4)
-            with col1: st.caption("Hint:")
+            col1, col2, col3 = st.columns(3)
+            with col1: st.caption("How Much does Serverless compute Cost?")
             with col2: st.caption("What is Data Engineering?")
             with col3: st.caption("What is MLOps?")
-            with col4: st.caption("Something related to ML")
         
         if st.button("Search"):
             # Perform a query and display the relevant passage
