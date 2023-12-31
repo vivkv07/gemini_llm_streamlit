@@ -18,6 +18,12 @@ import google.generativeai as genai
 import google.ai.generativelanguage as glm
 from chromadb import Documents, EmbeddingFunction, Embeddings
 
+st.set_page_config(
+    page_title="Image to Text",
+    page_icon="🧊",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
 # Load environment variables and configure API
 load_dotenv()
@@ -47,8 +53,8 @@ def generate_content_based_on_image(user_input, image_bytes):
     return response
 
 def display():
-    st.title("Story Building with a base Image!")
-    uploaded_file = st.file_uploader("Choose an image...", type=['png', 'jpg', 'jpeg'])
+    st.title("Story Building with an Image!")
+    uploaded_file = st.file_uploader("Load an image to get started.", type=['png', 'jpg', 'jpeg'])
     if uploaded_file:
         image = Image.open(uploaded_file)
         st.image(image, caption='Uploaded Image.', use_column_width=True)

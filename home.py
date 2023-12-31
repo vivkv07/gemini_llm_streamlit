@@ -5,6 +5,27 @@ import streamlit as st
 from dotenv import load_dotenv
 import google.generativeai as genai
 import os
+from streamlit_extras.app_logo import add_logo
+from streamlit_toggle import st_toggle_switch
+from streamlit_extras.badges import badge
+from streamlit_extras.mention import mention
+from streamlit_extras.metric_cards import style_metric_cards
+from streamlit_elements import elements, mui, html
+from streamlit_elements import nivo
+# from streamlit_extras.buy_me_a_coffee import button
+st.set_page_config(
+    page_title="Gemini LLM",
+    page_icon="🧊",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
+with st.sidebar:
+    st.caption("Developer: Vivek Kv")
+
+    st.markdown('''[![Streamlit App](https://badgen.net/pypi/v/streamlit)](https://pypi.org/project/streamlit/)
+                    [![Github Link](https://badgen.net/badge/icon/github?icon=github&label)]()
+                    [![BymeaCoffee](https://badgen.net/badge/icon/buymeacoffee?icon=buymeacoffee&label)](https://www.buymeacoffee.com/vivekkovvuru)''')
 
 load_dotenv()
 genai.configure(api_key=os.environ.get("GOOGLE_API_KEY"))

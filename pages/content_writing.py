@@ -9,6 +9,13 @@ import os
 from dotenv import load_dotenv
 import google.generativeai as genai
 
+st.set_page_config(
+    page_title="Write Articles",
+    page_icon="🧊",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
 load_dotenv()
 genai.configure(api_key=os.environ.get("GOOGLE_API_KEY"))
 

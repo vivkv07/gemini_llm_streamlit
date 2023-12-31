@@ -1,5 +1,7 @@
 # Placeholder content for requirements.txt
 streamlit
+streamlit_elements
+streamlit_extras
 textwrap3  # Assuming 'textwrap' refers to the 'textwrap3' package
 Pillow  # For 'from PIL import Image'
 python-dotenv  # For 'from dotenv import load_dotenv'

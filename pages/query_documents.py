@@ -20,6 +20,12 @@ import google.ai.generativelanguage as glm
 from chromadb import Documents, EmbeddingFunction, Embeddings
 from chromadb.config import Settings
 
+st.set_page_config(
+    page_title="Document Search",
+    page_icon="🧊",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 # Load environment variables and configure API
 load_dotenv()
 genai.configure(api_key=os.environ.get("GOOGLE_API_KEY"))
