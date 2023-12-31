@@ -19,7 +19,6 @@ import google.ai.generativelanguage as glm
 st.set_page_config(
     page_title="Image to Text",
     page_icon="🧊",
-    layout="wide",
     initial_sidebar_state="expanded"
 )
 
@@ -49,7 +48,7 @@ def generate_content_based_on_image(user_input, image_bytes):
         stream=True
     )
     return response
-
+import time
 def display():
     st.title("Story Building with an Image!")
     uploaded_file = st.file_uploader("Load an image to get started.", type=['png', 'jpg', 'jpeg'])
@@ -62,15 +61,20 @@ def display():
 
         col1, col2, col3 = st.columns(3)
         if col1.button("What's in the Image?"):
-            result = process_image("What do you see in this image?", image_url)
-            st.markdown(to_markdown(result.content), unsafe_allow_html=True)
+            with st.status("Reading Image"):
+
+                result = process_image("What do you see in this image?", image_url)
+                st.markdown(to_markdown(result.content), unsafe_allow_html=True)
+            
 
         if col2.button('Generate a Story'):
-            result = process_image("Create a short story based on the image", image_url)
-            st.markdown(to_markdown(result.content), unsafe_allow_html=True)
+            with st.status("Generating a Story"):
+                result = process_image("Create a short story based on the image", image_url)
+                st.markdown(to_markdown(result.content), unsafe_allow_html=True)
 
         if col3.button('Write a Blog'):
-            result = process_image("Write a Creative Blog about the Image", image_url)
-            st.markdown(to_markdown(result.content), unsafe_allow_html=True)
-
+            with st.status("Working on Blog"):
+                result = process_image("Write a Creative Blog about the Image", image_url)
+                st.markdown(result.content, unsafe_allow_html=True)
+        
 display()
