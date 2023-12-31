@@ -1,1 +1,12 @@
 # Placeholder content for requirements.txt
+streamlit
+textwrap3  # Assuming 'textwrap' refers to the 'textwrap3' package
+Pillow  # For 'from PIL import Image'
+python-dotenv  # For 'from dotenv import load_dotenv'
+langchain-core  # Assuming this is the correct package for 'from langchain_core.messages import HumanMessage'
+langchain-google-genai  # Assuming this is the correct package for 'from langchain_google_genai import ChatGoogleGenerativeAI'
+chromadb  # Assuming this is the correct package for 'import chromadb'
+numpy
+pandas
+google-generativeai  # Assuming this is the correct package for 'import google.generativeai as genai'
+google-ai-generativelanguage  # Assuming this is the correct package for 'import google.ai.generativelanguage as glm'
