@@ -12,4 +12,3 @@ numpy
 pandas
 google-generativeai  # Assuming this is the correct package for 'import google.generativeai as genai'
 google-ai-generativelanguage  # Assuming this is the correct package for 'import google.ai.generativelanguage as glm'
-pysqlite3
