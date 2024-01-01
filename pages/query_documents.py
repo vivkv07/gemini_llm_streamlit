@@ -200,8 +200,8 @@ def display():
             st.markdown(response.text)
 
 
-# display()
-st.title("Coming Soon!")
-st.caption("Progress: Working on the fix for sqlite3 as a dependency for chromadb on streamlit.")
-st.markdown("![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)")
+display()
+# st.title("Coming Soon!")
+# st.caption("Progress: Working on the fix for sqlite3 as a dependency for chromadb on streamlit.")
+# st.markdown("![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)")
 
