@@ -17,7 +17,7 @@ import pandas as pd
 
 import google.generativeai as genai
 import google.ai.generativelanguage as glm
-# from chromadb import Documents, EmbeddingFunction, Embeddings
+from chromadb import Documents, EmbeddingFunction, Embeddings
 # from chromadb.config import Settings
 
 st.set_page_config(
