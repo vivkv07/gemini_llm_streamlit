@@ -24,8 +24,9 @@ with st.sidebar:
     st.caption("Developer: Vivek Kv")
 
     st.markdown('''[![Streamlit App](https://badgen.net/pypi/v/streamlit)](https://pypi.org/project/streamlit/)
-                    [![Github Link](https://badgen.net/badge/icon/github?icon=github&label)]()
-                    [![BymeaCoffee](https://badgen.net/badge/icon/buymeacoffee?icon=buymeacoffee&label)](https://www.buymeacoffee.com/vivekkovvuru)''')
+                    [![Github](https://badgen.net/badge/icon/linkedin?icon=linkedin&label)]()
+                    [![BymeaCoffee](https://badgen.net/badge/icon/buymeacoffee?icon=buymeacoffee&label)](https://www.buymeacoffee.com/vivekkovvuru)
+                [![BymeaCoffee](https://flat.badgen.net/badge/streamlit/1.2/blue?icon=pypi)](https://www.buymeacoffee.com/vivekkovvuru)''')
 
 load_dotenv()
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
