@@ -121,7 +121,7 @@ def display():
     # Initialize Chroma DB client
     chroma_client = chromadb.Client()
  
-    if create_new_db and create_new_db == "Create a new vector collection":
+    if create_new_db and create_new_db == "Create a new collection":
         # Input field for table name
         table_name = st.text_input("Enter a name for the vector search table:")
        
