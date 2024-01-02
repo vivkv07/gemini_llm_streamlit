@@ -25,10 +25,18 @@ from chromadb import Documents, EmbeddingFunction, Embeddings
 from chromadb.config import Settings
 
 st.set_page_config(
-    page_title="Document Search",
+    page_title="GemLit - Document Intellect",
     page_icon="🧊",
     initial_sidebar_state="expanded"
 )
+
+with st.sidebar:
+    st.caption("Developer: Vivek Kv")
+    st.markdown('''[![Streamlit App](https://badgen.net/pypi/v/streamlit)](https://pypi.org/project/streamlit/)
+                [![Linkedin](https://flat.badgen.net/badge/linkedin//connect?icon=linkedin)](https://www.linkedin.com/in/vivekkovvuru/)''')
+    st.info("Code and Tutorials will be shared on Linkedin!")
+    st.markdown("[![BymeaCoffee](https://badgen.net/badge/icon/buymeacoffee?icon=buymeacoffee&label)](https://www.buymeacoffee.com/vivekkovvuru)")
+
 # Load environment variables and configure API
 load_dotenv()
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
@@ -112,11 +120,12 @@ def display_chat():
 
 def display():
     st.title("Work with your Documents")
+    st.caption("Powered with Google Gemini AI")
+
     st.image("./pages/assets/query_process.PNG")
 
     # Allow users to choose between existing databases or creating a new one
     create_new_db = st.selectbox('Pick an Option',('Create a new collection', 'Use Existing'))
-
 
     # Initialize Chroma DB client
     chroma_client = chromadb.Client()

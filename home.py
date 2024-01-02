@@ -18,14 +18,13 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
-# https://ai.google.dev/
+
 with st.sidebar:
     st.caption("Developer: Vivek Kv")
-
     st.markdown('''[![Streamlit App](https://badgen.net/pypi/v/streamlit)](https://pypi.org/project/streamlit/)
-                    [![Title](https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/72px-LinkedIn_icon.svg.png)](‘www.linkedin.com/in/brian-f-rubin’)
-                    [![BymeaCoffee](https://badgen.net/badge/icon/buymeacoffee?icon=buymeacoffee&label)](https://www.buymeacoffee.com/vivekkovvuru)
-                [![BymeaCoffee](https://flat.badgen.net/badge/streamlit/1.2/blue?icon=pypi)](https://www.buymeacoffee.com/vivekkovvuru)''')
+                [![Linkedin](https://flat.badgen.net/badge/linkedin//connect?icon=linkedin)](https://www.linkedin.com/in/vivekkovvuru/)''')
+    st.info("Code and Tutorials will be shared on Linkedin!")
+    st.markdown("[![BymeaCoffee](https://badgen.net/badge/icon/buymeacoffee?icon=buymeacoffee&label)](https://www.buymeacoffee.com/vivekkovvuru)")
 
 load_dotenv()
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
@@ -37,6 +36,7 @@ def display():
     st.caption("Powered with Google Gemini AI")
     st.markdown("""
 Welcome to **GemLit**, where the power of Gemini AI is seamlessly integrated into a user-friendly interface to assist you with a diverse array of tasks. Exploring quickest way to integrate power of AI within your applications.
+[Get your API Key ](https://ai.google.dev/) 
 
 ## Core Features
 

@@ -17,10 +17,16 @@ import google.generativeai as genai
 import google.ai.generativelanguage as glm
 
 st.set_page_config(
-    page_title="Image to Text",
+    page_title="GemLit - Image Insight",
     page_icon="🧊",
     initial_sidebar_state="expanded"
 )
+with st.sidebar:
+    st.caption("Developer: Vivek Kv")
+    st.markdown('''[![Streamlit App](https://badgen.net/pypi/v/streamlit)](https://pypi.org/project/streamlit/)
+                [![Linkedin](https://flat.badgen.net/badge/linkedin//connect?icon=linkedin)](https://www.linkedin.com/in/vivekkovvuru/)''')
+    st.info("Code and Tutorials will be shared on Linkedin!")
+    st.markdown("[![BymeaCoffee](https://badgen.net/badge/icon/buymeacoffee?icon=buymeacoffee&label)](https://www.buymeacoffee.com/vivekkovvuru)")
 
 # Load environment variables and configure API
 load_dotenv()
@@ -51,6 +57,8 @@ def generate_content_based_on_image(user_input, image_bytes):
 import time
 def display():
     st.title("Story Building with an Image!")
+    st.caption("Powered with Google Gemini AI")
+
     uploaded_file = st.file_uploader("Load an image to get started.", type=['png', 'jpg', 'jpeg'])
     if uploaded_file:
         image = Image.open(uploaded_file)
