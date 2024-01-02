@@ -32,7 +32,6 @@ st.set_page_config(
 # Load environment variables and configure API
 load_dotenv()
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
-st.image("./assets/query_process.PNG")
 # Helper Functions
 def to_markdown(text):
     text = text.replace('•', '  *')
@@ -113,6 +112,7 @@ def display_chat():
 
 def display():
     st.title("Work with your Documents")
+    st.image("./pages/assets/query_process.PNG")
 
     # Allow users to choose between existing databases or creating a new one
     create_new_db = st.selectbox('Pick an Option',('Create a new collection', 'Use Existing'))
