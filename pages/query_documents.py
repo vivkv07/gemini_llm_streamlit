@@ -166,7 +166,7 @@ def display():
 
     else:
         # Allow users to select from existing vector search databases
-        st.caption("select sample if yo ")
+        st.caption("select sample for test")
         chroma_client = chromadb.PersistentClient(path="./chromadb/", settings=Settings(allow_reset=True))
         collections = chroma_client.list_collections()
         
