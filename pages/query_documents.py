@@ -115,13 +115,13 @@ def display():
     st.title("Work with your Documents")
 
     # Allow users to choose between existing databases or creating a new one
-    create_new_db = st.selectbox('Pick an Option',('Create a new vector search database', 'Use Sample'))
+    create_new_db = st.selectbox('Pick an Option',('Create a new collection', 'Use Existing'))
 
 
     # Initialize Chroma DB client
     chroma_client = chromadb.Client()
  
-    if create_new_db and create_new_db == "Create a new vector search database":
+    if create_new_db and create_new_db == "Create a new vector collection":
         # Input field for table name
         table_name = st.text_input("Enter a name for the vector search table:")
        
@@ -166,6 +166,7 @@ def display():
 
     else:
         # Allow users to select from existing vector search databases
+        st.caption("select sample if yo ")
         chroma_client = chromadb.PersistentClient(path="./chromadb/", settings=Settings(allow_reset=True))
         collections = chroma_client.list_collections()
         
