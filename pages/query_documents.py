@@ -166,14 +166,14 @@ def display():
 
     else:
         # Allow users to select from existing vector search databases
-        st.caption("select sample for test")
         chroma_client = chromadb.PersistentClient(path="./chromadb/", settings=Settings(allow_reset=True))
         collections = chroma_client.list_collections()
         
         # st.write(collections)
         selected_db = st.selectbox("Select an existing vector search database:", [collection.name for collection in collections])
+        st.caption("select Sample if you are not sure!")
         if selected_db == "sample":
-            st.caption("Sample embeddings are created based of a MLOps Document")
+            st.caption("collection is created with embeddings are created based of a MLOps Document")
 
         # Allow users to input a query
         query = st.text_input("Enter your query:")
