@@ -13,17 +13,17 @@ from streamlit_elements import elements, mui, html
 from streamlit_elements import nivo
 # from streamlit_extras.buy_me_a_coffee import button
 st.set_page_config(
-    page_title="Gemini LLM",
+    page_title="GemLit - AI assistant",
     page_icon="🧊",
     layout="wide",
     initial_sidebar_state="expanded"
 )
-
+# https://ai.google.dev/
 with st.sidebar:
     st.caption("Developer: Vivek Kv")
 
     st.markdown('''[![Streamlit App](https://badgen.net/pypi/v/streamlit)](https://pypi.org/project/streamlit/)
-                    [![Github](https://badgen.net/badge/icon/linkedin?icon=linkedin&label)]()
+                    [![Title](https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/72px-LinkedIn_icon.svg.png)](‘www.linkedin.com/in/brian-f-rubin’)
                     [![BymeaCoffee](https://badgen.net/badge/icon/buymeacoffee?icon=buymeacoffee&label)](https://www.buymeacoffee.com/vivekkovvuru)
                 [![BymeaCoffee](https://flat.badgen.net/badge/streamlit/1.2/blue?icon=pypi)](https://www.buymeacoffee.com/vivekkovvuru)''')
 
@@ -33,45 +33,29 @@ genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 # if __name__ == "__main__":
 #     main()
 def display():
-    st.title("Gemini App - Home")
-    
+    st.title("GemLit: AI Assistant")
+    st.caption("Powered with Google Gemini AI")
     st.markdown("""
-    Welcome to the Gemini App! This app combines various AI models and functionalities to assist you with a range of tasks.
-    Here are some of the capabilities of this app:
+Welcome to **GemLit**, where the power of Gemini AI is seamlessly integrated into a user-friendly interface to assist you with a diverse array of tasks. Exploring quickest way to integrate power of AI within your applications.
 
-    - **Ask a Question**: You can ask questions, and the app will provide informative answers.
-    
-    - **Understand Your Image**: Upload an image, and the app will help you understand its content or even generate a story based on it.
-    
-    - **Content Generation**: You can provide context or a description, and the app will generate content, such as paragraphs, based on your input.
-    
-    - **Chat**: Engage in a conversation with a chatbot that can provide information and answer your queries.
-    
-    - **Document Query**: Upload PDF documents, create vector search tables, and search for relevant passages within those documents.
+## Core Features
 
-    **Additional Features**:
-    
-    - **Vector Search**: Utilize the power of vector search to retrieve relevant information from your documents.
-    
-    - **Natural Language Processing (NLP)**: The app uses state-of-the-art NLP models to understand and generate text.
-    
-    - **Image Analysis**: Gain insights from images and create stories using AI-powered image analysis.
-    
-    - **Content Creation**: Generate content for articles, reports, or any textual content with ease.
-    
-    - **Interactive Chat**: Engage in a conversation with a friendly chatbot that's here to assist you.
+- **Ask the Bot**: Engage with our advanced AI chatbot for insightful and informative answers. Whether it's a complex query or a simple question, our bot is equipped to assist you.
+- **Image Insight**: Upload any image for comprehensive analysis or to generate captivating stories. Dive deep into the visual world with our state-of-the-art image understanding technology.
+- **Content Wizard**: Transform your ideas into well-articulated content. With our sophisticated NLP algorithms, we provide exceptional content writing assistance, ensuring your text is both engaging and informative.
+- **Document Intellect**: Easily upload and sift through PDF documents. Our platform employs vector search technology, enabling you to find precise information swiftly and efficiently.
 
-    **How to Use**:
-    
-    1. Use the sidebar navigation to explore the specific features.
-    
-    2. Click on the respective pages to access each functionality.
-    
-    3. Follow the on-screen instructions and input your queries or content.
-    
-    4. Enjoy the AI-powered capabilities of the Gemini App!
-    
-    Have fun exploring the app and making the most of its AI features!
+## How to Use GemLit
+
+1. **Explore**: Navigate through the app using the streamlined sidebar.
+2. **Discover**: Access different pages to utilize specific functionalities.
+3. **Engage**: Follow user-friendly instructions and input your data or queries.
+4. **Experience**: Enjoy the innovative and versatile capabilities of Intellibridge.
+
+## Upcoming Feature: Chat with Data
+
+Currently in development, our **Chat with Data** feature, integrating PandasAI and Langchain, will revolutionize how you interact with data. Automate graph creation and manipulation through simple conversational inputs, making data analysis more intuitive than ever.
+
     """)
 
 display()

@@ -24,6 +24,8 @@ def to_markdown(text):
 
 def display():
     st.title("Let's write some Content!")
+    st.caption("Powered with Google Gemini AI")
+
     user_input = st.text_input("Input your topic of interest here.", max_chars=120)
     user_input = "You are a professional Content Writer. Write an article on "+ user_input
     if st.button('Submit') and user_input:
