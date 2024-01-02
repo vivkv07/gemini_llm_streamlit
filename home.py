@@ -40,10 +40,10 @@ Welcome to **GemLit**, where the power of Gemini AI is seamlessly integrated int
 
 ## Core Features
 
-- **Ask the Bot**: Engage with our advanced AI chatbot for insightful and informative answers. Whether it's a complex query or a simple question, our bot is equipped to assist you.
-- **Image Insight**: Upload any image for comprehensive analysis or to generate captivating stories. Dive deep into the visual world with our state-of-the-art image understanding technology.
-- **Content Wizard**: Transform your ideas into well-articulated content. With our sophisticated NLP algorithms, we provide exceptional content writing assistance, ensuring your text is both engaging and informative.
-- **Document Intellect**: Easily upload and sift through PDF documents. Our platform employs vector search technology, enabling you to find precise information swiftly and efficiently.
+- **Ask the Bot**: Engage with the AI chatbot for insightful and informative answers. Whether it's a complex query or a simple question, it will assist you.
+- **Image Insight**: Upload any image for comprehensive analysis or to generate captivating stories. Dive deep into the visual world with state-of-the-art image understanding technology.
+- **Content Wizard**: Transform your ideas into well-articulated content. Content writing assistance, ensuring your text is both engaging and informative.
+- **Document Intellect**: Easily upload and sift through PDF documents. Using ChromaDB for Vector Collections, enables you to find precise information swiftly and efficiently.
 
 ## How to Use GemLit
 
