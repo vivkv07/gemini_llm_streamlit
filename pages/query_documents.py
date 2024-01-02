@@ -32,7 +32,7 @@ st.set_page_config(
 # Load environment variables and configure API
 load_dotenv()
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
-st.image("assets/query_process.PNG")
+st.image("./assets/query_process.PNG")
 # Helper Functions
 def to_markdown(text):
     text = text.replace('•', '  *')
